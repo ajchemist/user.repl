@@ -53,14 +53,6 @@
       (throw (ex-info "Expected edn map." {:target f})))))
 
 
-(defn- map-keys
-  "Apply f to each key in m"
-  [m f]
-  (reduce
-    (fn [acc [k v]] (assoc acc (f k) v))
-    {} m))
-
-
 (defn- canonicalize-sym
   [s]
   (if (and (symbol? s) (nil? (namespace s)))
@@ -68,11 +60,18 @@
     s))
 
 
+(defn- map-keys
+  [m f]
+  (reduce-kv
+    (fn [acc k v] (assoc acc (f k) v))
+    {} m))
+
+
 (defn- canonicalize-all-syms
   [m]
   (walk/postwalk
     #(cond-> %
-       (map? %) (reduce-kv (fn [acc k v] (assoc acc (canonicalize-sym k) v)))
+       (map? %) (map-keys canonicalize-sym)
        (vector? %) ((fn [v] (mapv canonicalize-sym v))))
     m))
 
