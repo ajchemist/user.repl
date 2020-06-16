@@ -38,4 +38,4 @@
    (run!
      (fn [[prefix url]]
        (javadoc/add-remote-javadoc prefix url))
-     (or remote-javadoc (reader/read-config-maps (reader/default-configs "javadoc.edn"))))))
+     remote-javadoc)))
