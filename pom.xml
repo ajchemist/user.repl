@@ -4,7 +4,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>user.repl</groupId>
   <artifactId>user.repl</artifactId>
-  <version>2020.169.17321</version>
+  <version>2020.333.37216</version>
+  <dependencies>
+    <dependency>
+      <groupId>user.clojure.lang</groupId>
+      <artifactId>user.clojure.lang</artifactId>
+      <version>2020.333.25962</version>
+    </dependency>
+  </dependencies>
   <repositories>
     <repository>
       <id>clojars</id>
