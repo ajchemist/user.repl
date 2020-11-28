@@ -1,0 +1,22 @@
+{:linters
+ {:unused-namespace
+  {:exclude [
+             clojure.java.io
+             clojure.java.shell
+             clojure.string
+             clojure.test
+             ]}
+  :unused-referred-var
+  {:exclude {clojure.test [is are deftest testing]}}
+  :unresolved-symbol
+  {:exclude [(user.repl.alpha/r)]}
+  :unused-private-var
+  {:exclude [user.repl.alpha.reader/canonicalize-all-syms
+             user.repl.alpha.meta/r]}}
+
+
+ :lint-as
+ {
+  clojure.core.cache/defcache              clojure.core/defrecord
+  user.clojure.core.patch.alpha/resolve-ns clojure.core/require
+  }}

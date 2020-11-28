@@ -8,8 +8,6 @@
    java.io.File
    java.io.Reader
    java.io.PushbackReader
-   java.io.InputStreamReader
-   java.io.BufferedReader
    ))
 
 
@@ -46,7 +44,7 @@
   [f]
   (let [val (try
               (slurp-edn f)
-              (catch RuntimeException t
+              (catch RuntimeException _t
                 (throw (ex-info "Error reading edn." {:target f}))))]
     (if (map? val)
       val

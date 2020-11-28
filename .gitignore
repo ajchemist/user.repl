@@ -1,6 +1,8 @@
+.clj-kondo/.cache
 .cpcache
 .nrepl-port
 .eastwood
+.obsolete
 out
 cljs-test-runner-out
 /target

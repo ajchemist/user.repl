@@ -2,7 +2,6 @@
   (:require
    [clojure.java.io :as jio]
    [clojure.java.javadoc :as javadoc]
-   [user.repl.alpha.reader :as reader]
    ))
 
 
