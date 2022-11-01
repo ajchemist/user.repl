@@ -1,6 +1,7 @@
 {:paths ["src/core"]
  :deps
  {
+  ns-tracker/ns-tracker               {:mvn/version "0.4.0"}
   user.clojure.lang/user.clojure.lang {:mvn/version "2020.333.25962"}
   }
  :aliases
