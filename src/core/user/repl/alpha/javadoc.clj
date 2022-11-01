@@ -7,11 +7,12 @@
 
 (def ^:dynamic *core-java-api*
   (case (System/getProperty "java.specification.version")
-    "1.8" "http://docs.oracle.com/javase/8/docs/api/"
-    "9"   "http://docs.oracle.com/javase/9/docs/api/"
-    "10"  "http://docs.oracle.com/javase/10/docs/api/"
-    "11"  "https://docs.oracle.com/en/java/javase/11/docs/api/"
-    "http://docs.oracle.com/javase/8/docs/api/"))
+    ("1.8" "8") "http://docs.oracle.com/javase/8/docs/api/"
+    "9"         "http://docs.oracle.com/javase/9/docs/api/"
+    "10"        "http://docs.oracle.com/javase/10/docs/api/"
+    "11"        "https://docs.oracle.com/en/java/javase/11/docs/api/"
+    "17"        "https://docs.oracle.com/en/java/javase/17/docs/api/"
+    "https://docs.oracle.com/en/java/javase/17/docs/api/"))
 
 
 ;; patch core-java-api url in remote-javadoc

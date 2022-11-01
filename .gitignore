@@ -1,6 +1,7 @@
+.lsp/.cache
 .clj-kondo/.cache
 .cpcache
-.nrepl-port
+.nrepl*
 .eastwood
 .obsolete
 out
