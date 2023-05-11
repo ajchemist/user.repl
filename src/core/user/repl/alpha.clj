@@ -87,9 +87,10 @@
   (let [find-modified-namespaces (nt/ns-tracker paths)]
     (fn [_event]
       (let [modified-nses (find-modified-namespaces)]
-        (tap> [::modified-namespaces modified-nses])
-        (doseq [ns-sym modified-nses]
-          (try
-            (require ns-sym :reload)
-            (catch Exception e
-              (stacktrace/print-stack-trace e 20))))))))
+        (when (seq modified-nses)
+          (tap> [::modified-namespaces modified-nses])
+          (doseq [ns-sym modified-nses]
+            (try
+              (require ns-sym :reload)
+              (catch Exception e
+                (stacktrace/print-stack-trace e 20)))))))))
